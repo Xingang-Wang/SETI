@@ -3,8 +3,6 @@
 Reference code and data for the paper:
 
 > **Beyond the Edge of Chaos: Stability–Expressivity Transfer in Reservoir Forecasting**
-> Yao Du and Xingang Wang (Shaanxi Normal University)
-> Physical Review Letters (submitted)
 
 ## What this repository contains
 
