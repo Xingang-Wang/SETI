@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+title: "SETI: Stability–Expressivity Transfer Index for reservoir forecasting (reference code and data)"
+message: "If you use this code or data, please cite both the paper and this repository."
+type: software
+authors:
+  - family-names: Du
+    given-names: Yao
+  - family-names: Wang
+    given-names: Xingang
+repository-code: "https://github.com/Xingang-Wang/SETI"
+date-released: "2026-07-20"
+license: MIT
+keywords:
+  - reservoir computing
+  - echo state network
+  - Lyapunov exponent
+  - edge of chaos
+  - time-series forecasting
+preferred-citation:
+  type: article
+  title: "Beyond the edge of chaos: Stability–expressivity transfer in reservoir forecasting"
+  authors:
+    - family-names: Du
+      given-names: Yao
+    - family-names: Wang
+      given-names: Xingang
+  journal: "Physical Review Letters (submitted)"
+  year: 2026

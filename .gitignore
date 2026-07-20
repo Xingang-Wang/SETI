@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.pyc
+
+# MATLAB autosave / editor transient
+*.asv
+*.m~
+*.autosave
+
+# OS
+.DS_Store
+
+# Regenerable large MATLAB pipeline outputs (each is GB-scale).
+# These are produced by running code/asy/ from scratch; they are intentionally
+# NOT committed. Patterns are scoped to code/ so they never match the committed
+# lightweight mirror under plotting/data/code_mirror/.
+code/**/RC_data_*.mat
+code/**/data_lorenz_asy_W_a_0.7.mat
+code/**/data_chen_a_0.7_asy.mat
+code/**/data_in_quasi_W_asy.mat
+code/**/data_in_chen_transient.mat
+code/**/data_quasi_Wonly_ensemble.mat
+code/**/data_quasi_Wonly_ensemble_new.mat
+
+# Vector/binary figure byproducts (canonical figures are the PDFs in figures/)
+*.ai
+*.svg
+*.bmp
+*.tiff
+*.jpeg
