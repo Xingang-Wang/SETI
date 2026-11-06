@@ -72,6 +72,33 @@ index itself is formed in `plotting/plot_fig2.py`, `plot_fig3.py`, and
 5. Two outputs: `train_LEs_transient` (per-window FTLE → drives σᵢ) and
    `train_LEs` (running mean → $\bar\lambda_i$).
 
+## Sustained-loss prediction horizon
+
+The trajectory scans use a window-density divider rather than terminating at
+the first isolated threshold crossing or waiting for 50 consecutive failures.
+For each free-running sample,
+
+$$b_n=\mathbf{1}\!\left(
+  |\widehat y_n-y_n|>\epsilon |y_n|
+\right).$$
+
+The reported horizon is the beginning of the first window for which
+
+$$\frac{1}{w}\sum_{j=0}^{w-1}b_{n+j}\ge\theta.$$
+
+The paper-trajectory setting is $w=50$ and $\theta=0.80$: at least 40 of the
+50 samples must exceed the tolerance.  This identifies sustained separation
+while allowing isolated error bursts and brief returns below tolerance.  It is
+a robust sustained-loss horizon, not the strict single-crossing VPT.  The
+choice $\theta=1$ recovers the old consecutive-violation rule.  The
+partial-observation campaign used a separately validated $w=30$, $\theta=0.70$
+setting and is not part of this from-scratch paper pipeline.
+
+The implementation is `func_calculate_precise_prediction_periods.m` in each
+target folder.  Run `test_prediction_period_density.m` for its deterministic
+unit checks.  Committed `Predict_time` arrays are historical manuscript outputs;
+rerun the corresponding scan to regenerate them with the window-density rule.
+
 ## Notes on reproducibility
 
 - **`opt_chua_no_para.m` writes to a timestamped filename.** Downstream scripts

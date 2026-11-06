@@ -100,8 +100,10 @@ end
 y_true = testdata(3*i+1,drive_num+1:testLen);
 y_pred = Y1(1,drive_num+1:testLen);
 epsilon_percent = 0.05;
-tau = 50;
-exact_time = func_calculate_precise_prediction_periods(y_true, y_pred, epsilon_percent, tau);
+window_length = 50;
+bad_fraction = 0.80;
+exact_time = func_calculate_precise_prediction_periods( ...
+    y_true, y_pred, epsilon_percent, window_length, bad_fraction);
 T_ex = T_ex + exact_time * 0.02;
 end
 T_ex = T_ex / testnum;
